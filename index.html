@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StatCaddie Privacy Policy</title>
+<meta name="description" content="What the StatCaddie golf app collects, why, and how to control or delete it.">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #16191c; --muted: #5b6670;
+    --rule: #e3e7ea; --accent: #1e7f4c; --code: #f4f6f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1113; --fg: #e8edf0; --muted: #9aa6ad;
+      --rule: #232a2f; --accent: #3ddc84; --code: #171c20;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  h2 { font-size: 1.3rem; margin: 2.5rem 0 .6rem; letter-spacing: -.01em; }
+  h3 { font-size: 1.05rem; margin: 1.6rem 0 .4rem; color: var(--accent); }
+  .updated { color: var(--muted); font-size: .95rem; margin: 0 0 2rem; }
+  ul { padding-left: 1.15rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+  .lede {
+    background: var(--code); border-left: 3px solid var(--accent);
+    padding: 1rem 1.15rem; border-radius: 0 6px 6px 0; margin: 1.5rem 0 0;
+  }
+  .lede ul { margin: 0; }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; min-width: 34rem; }
+  th, td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  footer { color: var(--muted); font-size: .9rem; margin-top: 3rem; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>StatCaddie Privacy Policy</h1>
+<p class="updated">Last updated: 23 August 2026</p>
+
+<p>StatCaddie is published by Synergy Software Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;).
+This policy explains what the app collects, why, and what control you have. It is
+written to be read, not to be survived.</p>
+
+<div class="lede">
+<ul>
+  <li>StatCaddie works completely offline. If you never sign in, nothing leaves your device except optional weather, elevation and course lookups.</li>
+  <li>Your location is used to measure distances. It is never sold, never shared with advertisers, and never uploaded as raw coordinates.</li>
+  <li>There are no ads, no trackers sold to third parties, and no in-app purchases.</li>
+  <li>The score-tracking number StatCaddie calculates is <strong>not</strong> an official USGA or World Handicap System Handicap Index. StatCaddie does not connect to GHIN.</li>
+</ul>
+</div>
+
+<h2>What we collect</h2>
+
+<h3>Location</h3>
+<p>Precise location while a round is in progress, and only then. On the phone this comes
+from Google Play Services location; on a Wear OS watch it comes from Health Services
+during the golf exercise session.</p>
+<p>It is used to compute distances to the green and to hazards, to place shots, and to
+advance holes automatically. It is stored on your device. It is not uploaded.</p>
+<p>If you turn on live round sharing, we upload the resulting leaderboard &mdash; names,
+holes played and scores &mdash; so the people you share the link with can follow along.
+Coordinates are not part of that upload.</p>
+
+<h3>Account information</h3>
+<p>You can use StatCaddie without an account. If you create one, we store your display
+name, your email address if you sign in with email, and your Firebase user ID.</p>
+<p>If you type your official handicap index into the app for reference, that value is
+stored <strong>only on your device</strong>. It is never uploaded and it is never used
+in any StatCaddie calculation.</p>
+
+<h3>Rounds, scores and statistics</h3>
+<p>Scorecards, shot data, statistics and posted scores are yours. They live in a local
+database on your device. When you are signed in they also sync to your own document in
+Firestore so you do not lose them when you change phone.</p>
+<p>De-identified, aggregated statistics feed the peer-benchmarking feature. We only
+publish a cohort when at least 20 different players have contributed to it, so an
+individual cannot be picked out of a benchmark.</p>
+
+<h3>Photos and video</h3>
+<p>Swing videos and round photos stay on your device unless you choose to upload or post
+them. Swing pose analysis runs entirely on your device using Google ML Kit; no video
+frame is sent anywhere for analysis.</p>
+
+<h3>Diagnostics</h3>
+<p>If Firebase Analytics is enabled in your build, we collect standard app-usage events
+and a Firebase installation ID to understand which features are used. This can be turned
+off in Settings.</p>
+
+<h2>Third parties we send requests to</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Service</th><th>What is sent</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>OpenStreetMap Overpass</td><td>A course name or a bounding box</td><td>Downloading course geometry</td></tr>
+    <tr><td>OpenStreetMap tile servers</td><td>Map tile coordinates</td><td>Basemap in the course editor</td></tr>
+    <tr><td>golfcourseapi.com</td><td>A course name or id, and our API key</td><td>Scorecard, course rating and slope</td></tr>
+    <tr><td>Open-Meteo</td><td>A coarse coordinate</td><td>Weather and elevation for plays-like distance</td></tr>
+    <tr><td>Google Firebase</td><td>Account and round data, only when signed in</td><td>Auth, sync, live sharing, storage</td></tr>
+  </tbody>
+</table>
+</div>
+<p>None of these receive your name or email except Firebase, and none of them are
+advertising networks.</p>
+
+<h2>How long we keep it</h2>
+<p>On-device data stays until you delete it or uninstall the app. Backend data stays
+until you delete your account. Uploaded media follows the same lifecycle.</p>
+
+<h2>Your controls</h2>
+<ul>
+  <li><strong>Play offline.</strong> Turn on &ldquo;Offline only&rdquo; in Settings and the app makes no network requests at all.</li>
+  <li><strong>Delete a round.</strong> Any round can be deleted from its summary screen.</li>
+  <li><strong>Delete your account.</strong> Settings &rarr; Account &rarr; Delete account removes your user document, feed posts, comments, reviews, friendships and shared rounds.</li>
+  <li><strong>Stop sharing.</strong> A live round can be un-shared at any time; the public page then returns &ldquo;not shared&rdquo;.</li>
+  <li><strong>Revoke permissions.</strong> Location, camera and notification permissions can be revoked in Android settings. Distances stop working without location; nothing else breaks.</li>
+</ul>
+
+<h2>Children</h2>
+<p>StatCaddie is not directed at children under 13 and we do not knowingly collect data
+from them.</p>
+
+<h2>Attribution and licensing</h2>
+<p>Course geometry from OpenStreetMap is licensed under the Open Database License (ODbL).
+&copy; OpenStreetMap contributors. Weather and elevation data by Open-Meteo.com.</p>
+
+<h2>Not affiliated</h2>
+<p>StatCaddie is not affiliated with, endorsed by, or connected to the USGA, The R&amp;A,
+the World Handicap System, or GHIN.</p>
+
+<h2>Contact</h2>
+<p>Synergy Software Solutions &mdash; <a href="mailto:ppandya@synergyb.com">ppandya@synergyb.com</a></p>
+
+<hr>
+<footer>
+&copy; 2026 Synergy Software Solutions. StatCaddie for Android and Wear OS.
+</footer>
+
+</main>
+</body>
+</html>
