@@ -46,7 +46,7 @@
 <main>
 
 <h1>StatCaddie Privacy Policy</h1>
-<p class="updated">Last updated: 29 August 2026</p>
+<p class="updated">Last updated: 30 August 2026</p>
 
 <p>StatCaddie is published by Synergy Software Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;).
 This policy explains what the app collects, why, and what control you have. It is
@@ -54,7 +54,7 @@ written to be read, not to be survived.</p>
 
 <div class="lede">
 <ul>
-  <li>StatCaddie works completely offline. If you never sign in, nothing leaves your device except optional weather, elevation and course lookups.</li>
+  <li>The current release has no account or cloud sync. Scores and media stay on your device; optional lookups and Google Play purchases use the network.</li>
   <li>Your location is used to measure distances. It is never sold, never shared with advertisers, and never uploaded as raw coordinates.</li>
   <li>There are no ads or subscriptions. An optional one-time supporter purchase is processed by Google Play; every golf feature remains free.</li>
   <li>The score-tracking number StatCaddie calculates is <strong>not</strong> an official USGA or World Handicap System Handicap Index. StatCaddie does not connect to GHIN.</li>
@@ -69,34 +69,29 @@ from Google Play Services location; on a Wear OS watch it comes from Health Serv
 during the golf exercise session.</p>
 <p>It is used to compute distances to the green and to hazards, to place shots, and to
 advance holes automatically. It is stored on your device. It is not uploaded.</p>
-<p>If you turn on live round sharing, we upload the resulting leaderboard &mdash; names,
-holes played and scores &mdash; so the people you share the link with can follow along.
-Coordinates are not part of that upload.</p>
+<p>The current release does not upload live-round leaderboards. Features that need a
+cloud service report that no backend is configured.</p>
 
-<h3>Account information</h3>
-<p>You can use StatCaddie without an account. If you create one, we store your display
-name, your email address if you sign in with email, and your Firebase user ID.</p>
+<h3>Accounts</h3>
+<p>The current release has no account creation or sign-in and does not collect a name,
+email address or user ID. Firebase adapters in source are inactive because no Firebase
+configuration is bundled.</p>
 <p>If you type your official handicap index into the app for reference, that value is
 stored <strong>only on your device</strong>. It is never uploaded and it is never used
 in any StatCaddie calculation.</p>
 
 <h3>Rounds, scores and statistics</h3>
-<p>Scorecards, shot data, statistics and posted scores are yours. They live in a local
-database on your device. When you are signed in they also sync to your own document in
-Firestore so you do not lose them when you change phone.</p>
-<p>De-identified, aggregated statistics feed the peer-benchmarking feature. We only
-publish a cohort when at least 20 different players have contributed to it, so an
-individual cannot be picked out of a benchmark.</p>
+<p>Scorecards, shot data, statistics and posted scores live in a local database on your
+device. They are not uploaded or synced in the current release. Peer benchmarking is
+unavailable unless a backend is configured.</p>
 
 <h3>Photos and video</h3>
-<p>Swing videos and round photos stay on your device unless you choose to upload or post
-them. Swing pose analysis runs entirely on your device using Google ML Kit; no video
-frame is sent anywhere for analysis.</p>
+<p>Swing videos and round photos stay on your device. No media-upload service is configured.
+Swing pose analysis runs entirely on your device using Google ML Kit.</p>
 
 <h3>Diagnostics</h3>
-<p>If Firebase Analytics is enabled in your build, we collect standard app-usage events
-and a Firebase installation ID to understand which features are used. This can be turned
-off in Settings.</p>
+<p>The current release does not enable Firebase Analytics and sends no developer analytics
+or crash reports.</p>
 
 <h3>Optional supporter purchase</h3>
 <p>Google Play processes the optional one-time supporter purchase. StatCaddie receives
@@ -113,23 +108,20 @@ restore it. We do not receive or store your card number or other payment details
     <tr><td>USGS The National Map</td><td>Map tile coordinates</td><td>Aerial imagery under the hole map (public-domain US government imagery)</td></tr>
     <tr><td>golfcourseapi.com</td><td>A course name or id, and our API key</td><td>Scorecard, course rating and slope</td></tr>
     <tr><td>Open-Meteo</td><td>A coarse coordinate</td><td>Weather and elevation for plays-like distance</td></tr>
-    <tr><td>Google Firebase</td><td>Account and round data, only when signed in</td><td>Auth, sync, live sharing, storage</td></tr>
   </tbody>
 </table>
 </div>
-<p>None of these receive your name or email except Firebase, and none of them are
-advertising networks.</p>
+<p>These services do not receive your name or email, and none are advertising networks.</p>
 
 <h2>How long we keep it</h2>
-<p>On-device data stays until you delete it or uninstall the app. Backend data stays
-until you delete your account. Uploaded media follows the same lifecycle.</p>
+<p>On-device data stays until you delete it, clear app storage, or uninstall the app.
+The current release creates no StatCaddie cloud account and uploads no scores or media.</p>
 
 <h2>Your controls</h2>
 <ul>
   <li><strong>Play offline.</strong> Turn on &ldquo;Offline only&rdquo; in Settings and the app makes no network requests at all.</li>
   <li><strong>Delete a round.</strong> Any round can be deleted from its summary screen.</li>
-  <li><strong>Delete your account.</strong> Settings &rarr; Account &rarr; Delete account removes your user document, feed posts, comments, reviews, friendships and shared rounds.</li>
-  <li><strong>Stop sharing.</strong> A live round can be un-shared at any time; the public page then returns &ldquo;not shared&rdquo;.</li>
+  <li><strong>Erase all app data.</strong> Android Settings &rarr; Apps &rarr; StatCaddie &rarr; Storage &rarr; Clear storage, or uninstall the app.</li>
   <li><strong>Revoke permissions.</strong> Location, camera and notification permissions can be revoked in Android settings. Distances stop working without location; nothing else breaks.</li>
 </ul>
 
